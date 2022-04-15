@@ -1,11 +1,10 @@
-<?php
-if ($_POST['search']) {
-  $search_var = $_POST['search'];
-  // This function allows XML parsing and the use of external entities
-  $xml = simplexml_load_string($search_var, 'SimpleXMLElement', LIBXML_NOENT) or die("Error: Enter valid XML data structured.");
-  foreach ($xml as $value) {
-    echo $value->asXML() . "<br>";
-  }
-}
-
-?>
+<!DOCTYPE html>
+<html>
+<h1>XML Parsing tool</h1>
+<p>Enter XML input to convert it to clear text</p>
+<form method="post" action="xml-parser.php">
+    <textarea cols="70" rows="24" id="search" name="search"></textarea>
+    <input type="submit" name="submit" value="Send" id="submit"/>
+</form>
+<p>By Vry4n (VK9 Security)</p>
+</html>
